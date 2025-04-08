@@ -1,6 +1,8 @@
 import { createYoudaoWebSocketUrl } from "@/utils/youdao-websocket"
 import { NextResponse } from "next/server"
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: Request) {
   try {
     // Get query parameters from the request URL
