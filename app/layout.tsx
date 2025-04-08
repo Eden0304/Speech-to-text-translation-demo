@@ -5,7 +5,6 @@ export const metadata = {
   title: "Speech Translator - Real-Time Speech-to-Text Translation",
   description:
     "Break language barriers with our real-time speech-to-text translation service. Perfect for meetings, travel, and international communication.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -19,6 +18,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-import './globals.css'
