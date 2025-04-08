@@ -1,0 +1,442 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 262.1 83.3% 57.8%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 210 20% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 210 20% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 262.1 83.3% 57.8%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.colorful-gradient {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+  background-size: 200% 200%;
+  animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Color themes */
+.theme-blue-eclipse {
+  --background: 215 30% 12%;
+  --foreground: 210 40% 98%;
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --popover: 217 33% 17%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 213 30% 32%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 215 25% 27%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 215 25% 27%;
+  --muted-foreground: 217.9 10.6% 64.9%;
+  --accent: 213 30% 32%;
+  --accent-foreground: 210 40% 98%;
+  --border: 215 25% 27%;
+  --input: 215 25% 27%;
+  --ring: 213 30% 32%;
+}
+
+.theme-blue-eclipse .bg-gradient-to-r {
+  background: linear-gradient(to right, #0d1b2a, #1b263b, #415a77);
+}
+
+.theme-blue-eclipse .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+}
+
+.theme-blue-eclipse .text-transparent.bg-clip-text.bg-gradient-to-r {
+  background: linear-gradient(to right, #778da9, #e0e1dd);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.theme-calm {
+  --background: 160 30% 98%;
+  --foreground: 170 30% 15%;
+  --card: 160 30% 96%;
+  --card-foreground: 170 30% 15%;
+  --popover: 160 30% 96%;
+  --popover-foreground: 170 30% 15%;
+  --primary: 162 47% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 142 76% 36%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 160 30% 90%;
+  --muted-foreground: 170 30% 35%;
+  --accent: 162 47% 50%;
+  --accent-foreground: 0 0% 100%;
+  --border: 160 30% 85%;
+  --input: 160 30% 85%;
+  --ring: 162 47% 50%;
+}
+
+.theme-calm .bg-gradient-to-r {
+  background: linear-gradient(to right, #20b2aa, #32cd32, #1e90ff);
+}
+
+.theme-calm .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #f0f9f9, #e0f2f1);
+}
+
+.theme-calm .text-transparent.bg-clip-text.bg-gradient-to-r {
+  background: linear-gradient(to right, #20b2aa, #32cd32);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.theme-high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 45 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 0%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 0%;
+  --accent: 45 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --border: 0 0% 0%;
+  --input: 0 0% 90%;
+  --ring: 45 100% 50%;
+}
+
+.theme-high-contrast .bg-gradient-to-r {
+  background: linear-gradient(to right, #000000, #ffd700);
+}
+
+.theme-high-contrast .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+}
+
+.theme-high-contrast .text-transparent.bg-clip-text.bg-gradient-to-r {
+  background: #000000;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Mode-specific styles */
+.mode-child {
+  --background: 120 50% 97%;
+  --foreground: 210 80% 30%;
+  --card: 120 60% 97%;
+  --card-foreground: 210 80% 30%;
+  --popover: 120 60% 97%;
+  --popover-foreground: 210 80% 30%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 120 50% 90%;
+  --muted-foreground: 210 80% 40%;
+  --accent: 35 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --border: 120 50% 85%;
+  --input: 120 50% 85%;
+  --ring: 142 76% 36%;
+}
+
+.mode-child .bg-gradient-to-r {
+  background: linear-gradient(to right, #4caf50, #2196f3, #ff9800);
+}
+
+.mode-child .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #e8f5e9, #e3f2fd);
+}
+
+.mode-child .text-transparent.bg-clip-text.bg-gradient-to-r {
+  background: linear-gradient(to right, #4caf50, #2196f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.mode-child button {
+  font-size: 1.1em;
+  border-radius: 1rem;
+}
+
+.mode-child .card {
+  border-radius: 1rem;
+  border-width: 2px;
+}
+
+/* Elderly mode with high contrast */
+.mode-elderly {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 45 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 0%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 0%;
+  --accent: 45 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --border: 0 0% 0%;
+  --input: 0 0% 90%;
+  --ring: 45 100% 50%;
+}
+
+.mode-elderly .bg-gradient-to-r {
+  background: linear-gradient(to right, #000000, #ffd700);
+}
+
+.mode-elderly .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+}
+
+.mode-elderly .text-transparent.bg-clip-text.bg-gradient-to-r {
+  background: #000000;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.mode-elderly button {
+  font-size: 1.2em;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid black;
+}
+
+.mode-elderly h1,
+.mode-elderly h2,
+.mode-elderly h3 {
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.mode-elderly p,
+.mode-elderly span,
+.mode-elderly label {
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.mode-elderly a {
+  text-decoration: underline;
+  color: #0000ee;
+}
+
+.mode-elderly a:visited {
+  color: #551a8b;
+}
+
+.mode-elderly input,
+.mode-elderly select,
+.mode-elderly textarea {
+  border: 2px solid black;
+  font-size: 1.1em;
+}
+
+/* Simplified UI */
+.simplified-ui .card {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.simplified-ui button {
+  box-shadow: none;
+}
+
+.simplified-ui .complex-element {
+  display: none;
+}
+
+/* Star Border Component Styles */
+.star-border-container {
+  display: inline-block;
+  padding: 1px 0;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.border-gradient-bottom {
+  position: absolute;
+  width: 300%;
+  height: 50%;
+  opacity: 0.7;
+  bottom: -11px;
+  right: -250%;
+  border-radius: 50%;
+  animation: star-movement-bottom linear infinite alternate;
+  z-index: 0;
+}
+
+.border-gradient-top {
+  position: absolute;
+  opacity: 0.7;
+  width: 300%;
+  height: 50%;
+  top: -10px;
+  left: -250%;
+  border-radius: 50%;
+  animation: star-movement-top linear infinite alternate;
+  z-index: 0;
+}
+
+.inner-content {
+  position: relative;
+  background: linear-gradient(to bottom, #060606, #111);
+  border: 1px solid #222;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 16px 26px;
+  border-radius: 20px;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Theme-specific inner content styles */
+.theme-default .inner-content {
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  border: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.dark .theme-default .inner-content {
+  background: linear-gradient(to bottom, #1a1a1a, #111);
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.theme-blue-eclipse .inner-content {
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+  border: 1px solid #415a77;
+  color: #e0e1dd;
+}
+
+.theme-calm .inner-content {
+  background: linear-gradient(to bottom, #f0f9f9, #e0f2f1);
+  border: 1px solid #b2dfdb;
+  color: #004d40;
+}
+
+.dark .theme-calm .inner-content {
+  background: linear-gradient(to bottom, #004d40, #00695c);
+  border: 1px solid #00897b;
+  color: #e0f2f1;
+}
+
+.theme-high-contrast .inner-content {
+  background: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.dark .theme-high-contrast .inner-content {
+  background: black;
+  border: 2px solid white;
+  color: white;
+}
+
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
